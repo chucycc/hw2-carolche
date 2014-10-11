@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>  <annotatorImplementationName>uima.ae.Merger_ae</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>entrezgene_aeDescriptor</name>
+    <description/>
+    <version>1.0</version>
+    <vendor>Carol Cheng</vendor>
+    <configurationParameters/>
+    <configurationParameterSettings/>
+    <typeSystemDescription>
+      <imports>
+        <import name="descriptors.deiis_types"/>
+      </imports>
+    </typeSystemDescription>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs>
+          <type allAnnotatorFeatures="true">carolche.types.Annotation_lingpipe</type>
+          <type allAnnotatorFeatures="true">carolche.types.Annotation_abner</type>
+          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Annotation</type>
+        <type allAnnotatorFeatures="true">carolche.types.Annotation_nemine</type>
+        </inputs>
+        <outputs>
+          <type allAnnotatorFeatures="true">carolche.types.Annotation_gene</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+  <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>

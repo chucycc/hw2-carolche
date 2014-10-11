@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>false</primitive>  
+  <delegateAnalysisEngineSpecifiers>
+    <delegateAnalysisEngine key="sentence_aeDescriptor">
+      <import location="descriptors/ae/sentence_aeDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="lingpipe_aeDescriptor">
+      <import location="descriptors/ae/lingpipe_aeDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="abner_aeDescriptor">
+      <import location="descriptors/ae/abner_aeDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="merger_aeDescriptor">
+      <import location="descriptors/ae/merger_aeDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    </delegateAnalysisEngineSpecifiers>
+  <analysisEngineMetaData>
+    <name>hw2-carolche-aae</name>
+    <description/>
+    <version>1.0</version>
+    <vendor>Carol Cheng</vendor>
+    <configurationParameters searchStrategy="language_fallback"/>
+    <configurationParameterSettings/>
+    <flowConstraints>
+      <fixedFlow>
+        <node>sentence_aeDescriptor</node>
+        <node>lingpipe_aeDescriptor</node>
+        <node>abner_aeDescriptor</node>
+        <node>merger_aeDescriptor</node>
+        </fixedFlow>
+    </flowConstraints>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs>
+          <type allAnnotatorFeatures="true">uima.tcas.DocumentAnnotation</type>
+        </inputs>
+        <outputs>
+          <type allAnnotatorFeatures="true">carolche.types.Annotation_stanford</type>
+          <type allAnnotatorFeatures="true">carolche.types.Annotation_nemine</type>
+          <type allAnnotatorFeatures="true">carolche.types.Annotation_lingpipe</type>
+          <type allAnnotatorFeatures="true">carolche.types.Annotation_gene</type>
+          <type allAnnotatorFeatures="true">carolche.types.Annotation_abner</type>
+          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Annotation</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+  <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>
