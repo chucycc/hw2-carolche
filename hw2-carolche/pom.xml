@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>edu.cmu.lti.11791.f14.hw2</groupId>
 	<artifactId>hw2-carolche</artifactId>
-	<version>0.0.5-SNAPSHOT</version>
+	<version>0.0.6-SNAPSHOT</version>
 	<scm>
 		<connection>scm:git:git@github.com:chucycc/hw2-carolche.git</connection>
 		<developerConnection>
@@ -37,26 +37,38 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
+	<configuration>
+		<source>1.6</source>
+		<target>1.6</target>
+	</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
 				<version>2.5</version>
-				<executions>
-					<execution>
-						<id>default</id>
-						<goals>
-							<goal>perform</goal>
-						</goals>
-						<configuration>
-							<pomFileName>hw2-carolche/pom.xml</pomFileName>
-						</configuration>
-					</execution>
-				</executions>
+<executions>
+        <execution>
+            <id>default</id>
+            <goals>
+                <goal>perform</goal>
+            </goals>
+            <configuration>
+                <pomFileName>hw2-carolche/pom.xml</pomFileName>
+            </configuration>
+        </execution>
+    </executions>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.maven.scm</groupId>
+            <artifactId>maven-scm-api</artifactId>
+            <version>1.9.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.scm</groupId>
+            <artifactId>maven-scm-provider-gitexe</artifactId>
+            <version>1.9.1</version>
+        </dependency>
+    </dependencies>
 			</plugin>
 		</plugins>
 	</build>
